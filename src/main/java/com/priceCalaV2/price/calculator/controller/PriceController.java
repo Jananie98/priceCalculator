@@ -1,8 +1,7 @@
 package com.priceCalaV2.price.calculator.controller;
 
 import com.priceCalaV2.price.calculator.StandardResponse;
-import com.priceCalaV2.price.calculator.dto.PriceDTO;
-import com.priceCalaV2.price.calculator.repo.PriceRepo;
+import com.priceCalaV2.price.calculator.entity.Price;
 import com.priceCalaV2.price.calculator.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,12 +14,15 @@ import org.springframework.web.bind.annotation.*;
 public class PriceController {
     @Autowired
     private PriceService priceService;
-    @GetMapping(path = "/getbyid" , params = {"id","count"})
-    public ResponseEntity<StandardResponse> getTotalPrice(@RequestParam(value = "id") int prodid, @RequestParam(value = "count") int itemcount){
-        ResponseEntity<StandardResponse> response = priceService.getTotalPrice(prodid,itemcount);
+
+    @GetMapping(path ="/gettotalprice",params = {"id","count"})
+    public ResponseEntity<StandardResponse> getPriceByProdit(@RequestParam(value = "id") int prodid, @RequestParam(value = "count") int itemcount){
+        ResponseEntity response = priceService.getPriceByProdit(prodid,itemcount);
+        System.out.println(response);
         return new ResponseEntity<StandardResponse>(
                 new StandardResponse(200,"Success",response),
                 HttpStatus.OK
         );
     }
+
 }

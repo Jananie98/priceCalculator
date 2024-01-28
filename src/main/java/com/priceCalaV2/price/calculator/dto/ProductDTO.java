@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ProductDTO {
+    private int prodit;
     private ProductType prodname;
 }

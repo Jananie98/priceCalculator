@@ -16,7 +16,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer prodit;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     @Column(name = "prodname")
-    private ProductType prodname;
+    private String prodname;
 }

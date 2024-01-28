@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 @EnableJpaRepositories
 public interface ProductRepo extends JpaRepository<Product,Integer> {
 
-
+Product findByProdit(int prodid);
 }
