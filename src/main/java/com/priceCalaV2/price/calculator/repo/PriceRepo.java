@@ -11,8 +11,11 @@ import org.springframework.stereotype.Repository;
 @EnableJpaRepositories
 public interface PriceRepo extends JpaRepository<Price,Integer> {
 
-    Price getByProdit(int prodid);
-    ResponseEntity getPriceByProdit(int prodid , int itemcount) ;
+    Price findByProdit(int prodid);
+
+    Price findByProditEqualsAndItemcountEquals(int prodid , int itemcount) ;
+    Price getPriceByProditEqualsAndItemcount(int prodid , int itemcount) ;
+
 
 
 }

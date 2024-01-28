@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class PriceDTO {
-
-    private Integer numofunits;
-    private Double baseprice;
     private Product prodit;
+    private double totalprice;
 }

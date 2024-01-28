@@ -13,8 +13,8 @@ import java.util.List;
 
 public interface PriceService {
 
-    Price getByProdit(int prodid);
-    ResponseEntity getPriceByProdit(int prodid , int itemcount);
+    Price findByProdit(int prodid);
+    PriceDTO getPriceByProditEqualsAndItemcount(int prodid , int itemcount);
 
 
 }

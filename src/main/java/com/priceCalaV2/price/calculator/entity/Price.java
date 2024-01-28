@@ -21,7 +21,16 @@ public class Price {
     @Column(name = "baseprice")
     private Double baseprice;
 
-    @JoinColumn(name = "prodit" , referencedColumnName ="prodit")
-    @OneToOne(optional = false, fetch = FetchType.EAGER)
-    private Product prodit;
+    @Column(name = "totalprice")
+    private Double totalprice;
+
+    @Column(name = "itemcount")
+    private Integer itemcount;
+
+    @Column(name = "prodit")
+    private Integer prodit;
+
+//    @JoinColumn(name = "prodit" , referencedColumnName ="prodit")
+//    @OneToOne(optional = false, fetch = FetchType.EAGER)
+//    private Product prodit;
 }
